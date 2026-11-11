@@ -19,7 +19,7 @@ For each topic: read a Book chapter, solve relevant Rustlings exercises, and mak
 
 Start with brute force, explain the complexity, then improve the approach and test edge cases. Implement a structure yourself when that structure is the subject of the exercise; standard collections are useful tools for other problems.
 
-- [ ] Arrays, slices, strings, two pointers, and binary search; finish two-sum.
+- [ ] Arrays, slices, strings, two pointers, and binary search; improve the brute-force two-sum approach.
 - [ ] Dynamic arrays, linked structures, stacks, queues, and ring buffers.
 - [ ] Hashing, sets, maps, and frequency counting.
 - [ ] Recursion, trees, heaps, and priority queues.

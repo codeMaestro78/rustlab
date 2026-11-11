@@ -35,11 +35,11 @@ rustlab/
 | Track | Start | Current state |
 | --- | --- | --- |
 | Rust concepts | [playground](exercises_learn/src/main.rs) | Ownership and `String` experiments |
-| DSA | [DSA library](crates/dsa/src/lib.rs) | Two-sum attempt is unfinished and currently does not compile |
+| DSA | [DSA library](crates/dsa/src/lib.rs) | Brute-force two-sum with tests; more structures to come |
 | Projects | [RESP library](crates/resp/src/lib.rs) | Encoder is an exercise; its [tests](crates/resp/tests/encode.rs) describe the expected API and currently do not compile |
 | Reflection | [Day 1](notes/day-01.md) | Exercise brief and prompts |
 
-Consequently, workspace-wide checks will fail until the unfinished exercises are completed. Work on one package at a time; `cargo run -p exercises_learn` does not require the other packages to compile. See the [practice guide](guides/PRACTICE.md) for a repeatable workflow and where new work belongs.
+Workspace-wide tests will fail until the RESP exercise is completed. Work on one package at a time; `cargo run -p exercises_learn` does not require the other packages to compile. See the [practice guide](guides/PRACTICE.md) for a repeatable workflow and where new work belongs.
 
 ## Rustlings
 
