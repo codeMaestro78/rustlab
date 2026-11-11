@@ -1,0 +1,6 @@
+[package]
+name = "exercises_learn"
+edition.workspace = true
+version.workspace = true
+
+[dependencies]

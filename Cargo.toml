@@ -1,0 +1,11 @@
+[workspace]
+resolver = "3"
+members = ["crates/*", "exercises_learn"]
+
+[workspace.package]
+edition = "2024"
+version = "0.1.0"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
