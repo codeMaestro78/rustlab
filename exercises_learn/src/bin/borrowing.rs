@@ -137,3 +137,4 @@ fn print_name(s: &String) {
 fn mut_update_string(s: &mut String) {
     s.push_str(", Rust");
 }
+
