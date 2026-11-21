@@ -2,6 +2,7 @@
 ///
 /// Pairs are considered in index order, and an element cannot be used twice.
 /// This brute-force approach takes O(n²) time and O(1) extra space.
+use std::collections::HashMap;
 pub fn two_sum(nums: &[i32], target: i32) -> Option<(usize, usize)> {
     for i in 0..nums.len() {
         for j in (i + 1)..nums.len() {
@@ -14,6 +15,25 @@ pub fn two_sum(nums: &[i32], target: i32) -> Option<(usize, usize)> {
     None
 }
 
+pub fn two_sum_optimized(nums: &[i32], target: i32) -> Option<(usize, usize)> {
+    let mut earliest: HashMap<i64, usize> = HashMap::with_capacity(nums.len());
+    let mut best: Option<(usize, usize)> = None;
+
+    for (j, &n) in nums.iter().enumerate() {
+        let n = i64::from(n);
+        let need = i64::from(target) - n;
+
+        if let Some(&i) = earliest.get(&need) {
+            if best.is_none_or(|(bi, bj)| (i, j) < (bi, bj)) {
+                best = Some((i, j));
+            }
+        }
+
+        earliest.entry(n).or_insert(j);
+    }
+    best
+}
+
 #[cfg(test)]
 mod tests {
     use super::two_sum;
@@ -22,6 +42,8 @@ mod tests {
     fn finds_a_pair() {
         assert_eq!(two_sum(&[2, 7, 11, 15], 9), Some((0, 1)));
         assert_eq!(two_sum(&[1, 4, 6], 10), Some((1, 2)));
+        assert_eq!(two_sum_optimized(&[2, 7, 11, 15], 9), Some((0, 1)));
+        assert_eq!(two_sum_optimized(&[1, 4, 6], 10), Some((1, 2)));
     }
 
     #[test]
